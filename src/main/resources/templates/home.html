@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <title>Hello</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+  <h1>임시 게시판</h1>
+  <h1 th:text="${loginStatus}"></h1>
+  <p>
+    <a class="btn btn-lg btn-secondary" href="/members/new">회원 가입</a><br>
+    <a class="btn btn-lg btn-secondary" href="/members">회원 목록</a><br>
+    <a class="btn btn-lg btn-secondary" href="/members/login">로그인</a><br>
+    <a class="btn btn-lg btn-secondary" href="/members/needLogin">로그인 해야만 볼수있는거</a><br>
+  </p>
+</body>
+</html>

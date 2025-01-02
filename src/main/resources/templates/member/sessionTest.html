@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인을 해야만 볼 수 있는 페이지</title>
+</head>
+<body>
+  <h1>로그인을 해야만 볼 수 있음</h1>
+<div th:each="member:${member}">
+이메일: <p th:text="${member.email}"></p>
+이름: <p th:text="${member.name}"></p>
+비밀번호: <p th:text="${member.password}"></p>
+</div>
+</body>
+</html>
