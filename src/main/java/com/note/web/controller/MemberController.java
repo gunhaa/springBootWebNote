@@ -55,12 +55,17 @@ public class MemberController {
     }
 
     @GetMapping("/members/login")
-    public String memberLogin(){
+    public String memberLogin(HttpServletRequest request){
+        log.info("GET : /members/login");
+        ReqLogger(request);
         return "/member/memberLogin";
     }
 
     @PostMapping("/members/login")
     public String memberGetSession(HttpServletRequest request, @ModelAttribute Member member, Model model){
+
+        log.info("POST : /members/login");
+        ReqLogger(request);
 
         String loginStatus;
 
@@ -87,6 +92,10 @@ public class MemberController {
 
     @GetMapping("/members/needLogin")
     public String needLogin(HttpServletRequest request, Model model){
+
+        log.info("POST : /members/needLogin");
+        ReqLogger(request);
+
         HttpSession session = request.getSession(false);
         if(session != null){
             Member member = (Member) session.getAttribute("member");
