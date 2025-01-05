@@ -14,11 +14,10 @@
 #  org.hibernate.SQL: debug
 
 server:
-  port: 8088
+  port: 8080
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    #    url: jdbc:mysql://localhost:3306/helloDev
     username: root
     password: 1234
     url: jdbc:mysql://mysql-container:3306/helloDev
@@ -28,6 +27,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
 #  test환경에서 사용할 시 필요하다.
 #  profiles:
 #    active: test
