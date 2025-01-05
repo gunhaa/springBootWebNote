@@ -16,7 +16,7 @@ public class MainController {
         log.info("GET : /");
         ReqLogger(request);
 
-        return "home";
+        return "/home";
     }
 
 }

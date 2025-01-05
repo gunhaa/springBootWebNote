@@ -50,6 +50,10 @@ docker build -t spring-boot-web .
 docker run -d -p 8080:8080 --name spring-boot-container --network springboot-mysql-net spring-boot-web
 ```
 
+```shell
+# docker-compose.yml 추가 후 실행시키기
+docker-compose up -d
+```
 
 ### 
 

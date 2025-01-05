@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: helloDev
+    ports:
+      - "3306:3306"
+    networks:
+      - springboot-mysql-net
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+
+  spring-boot:
+    image: spring-boot-web  # 위에서 빌드한 Docker 이미지 이름
+    container_name: spring-boot-container
+    ports:
+      - "8080:8080"
+    networks:
+      - springboot-mysql-net
+    depends_on:
+      - db  # db 서비스가 먼저 실행되어야 spring-boot 실행
+    restart: always
+
+networks:
+  springboot-mysql-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local

@@ -38,7 +38,7 @@ public class MemberController {
 //        System.out.println("member.getName() = " + member.getName());
 //        System.out.println("member.getPassword() = " + member.getPassword());
         memberRepository.save(member);
-        return "home";
+        return "/home";
     }
 
     @GetMapping("/members")
@@ -75,11 +75,11 @@ public class MemberController {
             Member findMember = memberRepository.findByEmail(member.getEmail()).get();
             session.setAttribute("member" , findMember);
             model.addAttribute("loginStatus", loginStatus);
-            return "home";
+            return "/home";
         } else{
             loginStatus = "로그인 실패";
             model.addAttribute("loginStatus", loginStatus);
-            return "home";
+            return "/home";
         }
 
     }
@@ -100,10 +100,10 @@ public class MemberController {
         if(session != null){
             Member member = (Member) session.getAttribute("member");
             model.addAttribute("member", member);
-            return "member/sessionTest";
+            return "/member/sessionTest";
         } else{
             model.addAttribute("loginStatus", "로그인하고 들어갈 수 있습니다.");
-            return "home";
+            return "/home";
         }
 
     }
