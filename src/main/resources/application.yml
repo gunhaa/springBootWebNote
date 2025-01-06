@@ -23,7 +23,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1234
-    url: jdbc:mysql://mysql-container:3306/helloDev
+#    docker로 실행할떄
+#    url: jdbc:mysql://mysql-container:3306/helloDev
+#    local에서 실행할 때
+    url: jdbc:mysql://localhost:3306/helloDev
   jpa:
     hibernate:
       ddl-auto: update  # 테이블 자동 생성 및 업데이트 안 만들어줄거면 필수임
