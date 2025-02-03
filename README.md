@@ -62,7 +62,7 @@ docker-compose up -d
  3. docker-compose up -d
 
  이후 ci/cd 스크립트
- 1. docker spring boot image 파괴
+ 1. docker spring boot 컨테이너 내리기
  2. images 파일 제거
  3. images 다시 빌드
  4. docker build -t spring-boot-web .
