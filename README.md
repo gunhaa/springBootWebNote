@@ -55,7 +55,18 @@ docker run -d -p 8080:8080 --name spring-boot-container --network springboot-mys
 docker-compose up -d
 ```
 
-### 
+### 진행 요약
+처음
+ 1. db images pull
+ 2. docker build -t spring-boot-web .
+ 3. docker-compose up -d
+
+ 이후 ci/cd 스크립트
+ 1. docker spring boot image 파괴
+ 2. images 파일 제거
+ 3. images 다시 빌드
+ 4. docker build -t spring-boot-web .
+ 5. docker-compose up -d
 
 2. AWS ec2에 젠킨스 세팅하기
     - 젠킨스 스크립트를 통해 빌드하기
